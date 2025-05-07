@@ -9,7 +9,7 @@
 .
 ├── main.py          # Logique principale et contrôleur
 ├── models.py        # Modèle de données (classe Pizza)
-└── pizzascr.kv      # Interface utilisateur (langage Kivy)
+└── Pizza.kv      # Interface utilisateur (langage Kivy)
 ```  
 
 ---
@@ -25,7 +25,7 @@
 ## **📂 Aperçu du Code**  
 
 ### **1. Modèle de Données (`models.py`)**  
-Définit la classe `Pizza` avec des attributs en français.  
+Définit la classe `Pizza` avec des attributs en français.  856280
 
 ```python
 class Pizza:
@@ -144,12 +144,12 @@ MainWidget:
 
 ---
 
-## ** Flux de Données**  
+##  Flux de Données  
 
 ```mermaid
 flowchart TD
     A[models.py] -->|Crée les objets Pizza| B[main.py]
-    B -->|Convertit en dictionnaire| C[pizzascr.kv]
+    B -->|Convertit en dictionnaire| C[Pizza.kv]
     C -->|Affiche les données| D[RecycleView]
 ```  
 
@@ -157,7 +157,7 @@ flowchart TD
    - Les pizzas sont créées dans `models.py`.  
    - Converties en dictionnaires via `get_dictionary()`.  
 
-2. **Liaison avec l'interface** (`main.py` → `pizzascr.kv`)  
+2. **Liaison avec l'interface** (`main.py` → `Pizza.kv`)  
    - `MainWidget` envoie les données au `RecycleView`.  
    - Le fichier KV affiche chaque élément avec `PizzaWidget`.  
 
