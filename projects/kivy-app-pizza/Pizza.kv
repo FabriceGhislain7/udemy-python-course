@@ -52,6 +52,18 @@ MainWidget:
                     height: self.minimum_height
                     orientation: 'vertical'
                     spacing: dp(16)
+        Label:
+            text: root.error_str
+            size_hint: 1, None
+            height: dp(30) if len(root.error_str) > 0 else 0
+            font_size: dp(12)
+            bold: True
+            canvas.before:
+                Color:
+                    rgb: 1, 0, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
 <LeftAlignLabel@Label>:
     text_size: self.size
